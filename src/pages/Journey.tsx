@@ -80,7 +80,7 @@ const Journey: React.FC = () => {
       heading: 'Entering the Industry',
       paragraphs: [
         'Jan – Jun 2025: Software Developer (Contract) at JPMorgan Chase & Co. Contributed to cloud migration pipelines, API integrations, and scalable data architecture.',
-        'Jun 2025 – Present: Software developer, PayU Payments — working on high-performance, real-world FinTech systems. Building scalable services, settlement pipelines, automation, and AI integrations.',
+        'Jun 2025 – Present: Software Developer, PayU Payments — working on high-performance, real-world FinTech systems. Building scalable services, settlement pipelines, automation, and AI integrations.',
       ],
     },
   ];

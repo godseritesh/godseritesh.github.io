@@ -31,7 +31,7 @@ export const Footer = () => {
               Ritesh Godse
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              Software developer & AI Enthusiast building reliable, scalable systems and practical AI solutions.
+              Software Developer & AI Enthusiast building reliable, scalable systems and practical AI solutions.
             </p>
           </motion.div>
 

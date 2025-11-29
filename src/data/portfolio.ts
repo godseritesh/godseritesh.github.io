@@ -1,9 +1,9 @@
 export const personalInfo = {
   name: 'Ritesh Godse',
-  title: 'Software developer & FinTech Specialist',
+  title: 'Software Developer & FinTech Specialist',
   tagline: 'High-performance systems, AI-driven solutions, and scalable architectures',
   email: 'work.riteshgodse@gmail.com',
-  bio: 'Software developer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
+  bio: 'Software Developer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
   phone: '+91 8983100889',
   location: 'Pune, India',
   socials: {

@@ -23,7 +23,7 @@ const About = () => {
                 About Me
               </h1>
               <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-                Software developer specializing in high-performance FinTech systems, distributed architectures, and AI-driven solutions. I focus on measurable impact, clear design, and engineering that scales.
+                Software Developer specializing in high-performance FinTech systems, distributed architectures, and AI-driven solutions. I focus on measurable impact, clear design, and engineering that scales.
               </p>
             </div>
           </ContainerAnimation>
