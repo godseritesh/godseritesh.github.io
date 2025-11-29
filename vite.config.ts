@@ -4,8 +4,8 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  // Base path for production. For a user/organization site served at
-  // https://<user>.github.io/ the base should be '/'.
+  // Base path for production. For a user/organization site (repo named `username.github.io`),
+  // the base should be root '/'.
   base: '/',
   server: {
     port: 3000,
