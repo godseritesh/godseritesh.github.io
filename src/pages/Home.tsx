@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import { PageTransition } from '../components/Animations';
 // ScrollRevealWrapper removed from this page (Impact section removed)
 import { getResume } from '../data/resumeLoader';
-import { Suspense, lazy } from 'react';
-
-const ThreeDemo = lazy(() => import('../components/ThreeDemo'));
 
 const Home = () => {
   const resume = getResume();
@@ -82,7 +79,7 @@ const Home = () => {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
                 <span className="block font-black">Ritesh Godse</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-400 dark:to-cyan-400 font-bold text-4xl sm:text-5xl lg:text-6xl mt-2">
-                  Graduate Trainee Engineer
+                  Software developer
                 </span>
               </h1>
             </motion.div>
@@ -92,7 +89,7 @@ const Home = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl leading-relaxed font-light tracking-wide"
             >
-              I build and maintain <span className="font-semibold text-blue-600 dark:text-blue-300">backend systems</span>, <span className="font-semibold text-blue-600 dark:text-blue-300">streaming pipelines</span>, and <span className="font-semibold text-blue-600 dark:text-blue-300">practical AI tools</span>. My focus is reliability, clarity, and measurable improvements.
+              I design reliable backend systems and streaming pipelines that people and businesses trust. I combine strong engineering fundamentals with pragmatic AI to deliver clear, measurable impact — fast, maintainable, and secure.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -127,10 +124,7 @@ const Home = () => {
               </Link>
             </motion.div>
 
-            {/* 3D demo (lazy) */}
-            <Suspense>
-              <ThreeDemo />
-            </Suspense>
+            {/* Non-critical visual enhancements removed to prioritize fast initial load */}
 
             {/* Social Links */}
             <motion.div variants={itemVariants} className="flex gap-4 pt-8 border-t border-gray-300 dark:border-gray-600">

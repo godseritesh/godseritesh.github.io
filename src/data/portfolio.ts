@@ -1,11 +1,11 @@
 export const personalInfo = {
   name: 'Ritesh Godse',
-  title: 'Graduate Trainee Engineer & FinTech Specialist',
+  title: 'Software developer & FinTech Specialist',
   tagline: 'High-performance systems, AI-driven solutions, and scalable architectures',
   email: 'work.riteshgodse@gmail.com',
+  bio: 'Software developer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
   phone: '+91 8983100889',
   location: 'Pune, India',
-  bio: 'Graduate Trainee Engineer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
   socials: {
     github: 'https://github.com/godseritesh',
     linkedin: 'https://linkedin.com/in/riteshgodse',
@@ -20,7 +20,7 @@ export const experience = [
   {
     id: 1,
     company: 'PayU Payments',
-    position: 'Graduate Trainee Engineer',
+    position: 'Software Developer',
     duration: 'June 2025 - Present',
     description: 'Architecting and building high-performance payment processing systems handling millions of transactions daily. Specializing in settlement accuracy, real-time data pipelines, and LLM-powered customer support automation.',
     highlights: [

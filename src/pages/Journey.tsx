@@ -80,7 +80,7 @@ const Journey: React.FC = () => {
       heading: 'Entering the Industry',
       paragraphs: [
         'Jan – Jun 2025: Software Developer (Contract) at JPMorgan Chase & Co. Contributed to cloud migration pipelines, API integrations, and scalable data architecture.',
-        'Jun 2025 – Present: Graduate Trainee Engineer, PayU Payments — working on high-performance, real-world FinTech systems. Building scalable services, settlement pipelines, automation, and AI integrations.',
+        'Jun 2025 – Present: Software developer, PayU Payments — working on high-performance, real-world FinTech systems. Building scalable services, settlement pipelines, automation, and AI integrations.',
       ],
     },
   ];
@@ -268,35 +268,39 @@ const Journey: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Mobile single-column card (appears below center marker) */}
-                    </div>
-
-                    <div className="md:hidden mt-6">
-                      <motion.article
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: idx * 0.04 }}
-                        className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg"
-                        aria-labelledby={`scene-${s.id}-title-mobile`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="text-xl">{s.emoji}</div>
-                          <div>
-                            <p className="text-xs text-gray-500">{s.years}</p>
-                            <h4 id={`scene-${s.id}-title-mobile`} className="text-base font-bold text-gray-900 dark:text-white">{s.heading}</h4>
-                          </div>
-                        </div>
-                        <div className="mt-3 text-gray-700 dark:text-gray-300 text-sm space-y-2">
-                          {s.paragraphs.map((p, i) => (
-                            <p key={i}>{p}</p>
-                          ))}
-                        </div>
-                      </motion.article>
+                      {/* Mobile single-column card (moved to a single mobile list below for deterministic rendering) */}
                     </div>
                   </div>
                 );
               })}
+            </div>
+
+            {/* Mobile single-column list (rendered once to avoid duplication) */}
+            <div className="md:hidden mt-6 space-y-4">
+              {scenes.map((s) => (
+                <motion.article
+                  key={`mobile-${s.id}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-lg"
+                  aria-labelledby={`scene-${s.id}-title-mobile`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="text-xl">{s.emoji}</div>
+                    <div>
+                      <p className="text-xs text-gray-500">{s.years}</p>
+                      <h4 id={`scene-${s.id}-title-mobile`} className="text-base font-bold text-gray-900 dark:text-white">{s.heading}</h4>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-gray-700 dark:text-gray-300 text-sm space-y-2">
+                    {s.paragraphs.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </motion.article>
+              ))}
             </div>
 
             {/* CTA preserved below timeline */}

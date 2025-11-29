@@ -53,11 +53,11 @@ export interface Resume {
 const resumeData: Resume = {
   personal: {
     name: "Ritesh Godse",
-    role: "Graduate Trainee Engineer & AI Enthusiast",
+    role: "Software developer & AI Enthusiast",
     phone: "+91 8983100889",
     email: "work.riteshgodse@gmail.com",
     location: "Pune, Maharashtra, India",
-    short_bio: "Graduate Trainee Engineer focused on high-performance FinTech systems and applied AI. Skilled in distributed systems, Kafka pipelines, cloud IaC, and LLM integrations."
+    short_bio: "Software developer focused on high-performance FinTech systems and applied AI. Skilled in distributed systems, Kafka pipelines, cloud IaC, and LLM integrations."
   },
   education: [
     {
@@ -70,7 +70,7 @@ const resumeData: Resume = {
   ],
   work_experience: [
     {
-      title: "Graduate Trainee",
+      title: "Software Developer",
       company: "PayU Payments",
       location: "Pune, Maharashtra, India",
       dates: "June 2025 - Present",
