@@ -191,15 +191,19 @@ const About = () => {
           </div>
           {/* Small profile picture */}
           <div className="mt-12 text-center">
-            <img
-              src={`${viteBase}photo.png`}
-              alt="Profile"
-              loading="lazy"
-              width={144}
-              height={144}
-              className="w-36 h-36 rounded-full mx-auto border-2 border-gray-200 dark:border-gray-700 shadow-md object-cover"
-              style={{ backgroundColor: '#ffeb3b' }}
-            />
+            <picture>
+              <source srcSet={`${viteBase}photo.avif`} type="image/avif" />
+              <source srcSet={`${viteBase}photo.webp`} type="image/webp" />
+              <img
+                src={`${viteBase}photo.png`}
+                alt="Profile"
+                loading="lazy"
+                width={144}
+                height={144}
+                className="w-36 h-36 rounded-full mx-auto border-2 border-gray-200 dark:border-gray-700 shadow-md object-cover"
+                style={{ backgroundColor: '#ffeb3b' }}
+              />
+            </picture>
           </div>
         </div>
       </div>
