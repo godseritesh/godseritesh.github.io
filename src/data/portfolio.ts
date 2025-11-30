@@ -223,8 +223,6 @@ export const projects = [
 ];
 
 export const achievements = [
-  'Improved settlement accuracy by 35% and reduced storage redundancy by 40% via Daily Settlement Table service',
-  'Processed 40,000+ transactions per hour using Kafka and MongoDB in BBPS communication service',
   'Reduced customer query resolution time by 25% and automated 40% of support tickets with LLM-powered chatbot',
   'Cut manual intervention by 60% via recurring report scheduler integrated with Jenkins and AWS',
   'Achieved 2× faster throughput for Hadoop-to-Delta Lake migration and established POC framework for production scaling',

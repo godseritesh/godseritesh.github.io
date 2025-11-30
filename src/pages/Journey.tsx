@@ -24,7 +24,7 @@ const Journey: React.FC = () => {
     {
       id: 2,
       emoji: '🏫',
-      years: '2009 – 2012',
+      years: '2009 - 2012',
       heading: 'The First Steps Into School Life',
       paragraphs: [
         'Primary school was a burst of discovery. Days filled with school activities, laughter, friends, and harmless mischiefs.',
@@ -34,7 +34,7 @@ const Journey: React.FC = () => {
     {
       id: 3,
       emoji: '🎒',
-      years: '2013 – 2019',
+      years: '2013 - 2019',
       heading: 'Secondary School: The First Leadership Arc',
       paragraphs: [
         'Secondary school became a stage for growth. From gathering performances to organizing Sun Fair, from Scout & Guide’s Khari Kamai to camping at Kaas Plateau, every experience added grit.',

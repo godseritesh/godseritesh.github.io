@@ -89,7 +89,7 @@ const Home = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl leading-relaxed font-light tracking-wide"
             >
-              I design and ship backend systems and streaming platforms with a focus on correctness, latency, and operational visibility. Fast recovery, clear contracts, and measurable SLIs guide every decision.
+              I design and ship backend systems and platforms with a focus on correctness, latency, and operational visibility. Fast recovery, clear contracts, and measurable SLIs guide every decision.
             </motion.p>
 
             {/* CTA Buttons */}
