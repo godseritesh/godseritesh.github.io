@@ -49,35 +49,46 @@ export interface Resume {
   links: Record<string, string>;
 }
 
-// Load resume data from JSON file
 const resumeData: Resume = {
   personal: {
     name: "Ritesh Godse",
-    role: "Software Developer & AI Enthusiast",
+    role: "Software Development Engineer",
     phone: "+91 8983100889",
     email: "work.riteshgodse@gmail.com",
-    location: "Pune, Maharashtra, India",
-    short_bio: "Software Developer focused on high-performance FinTech systems and applied AI. Skilled in distributed systems, Kafka pipelines, cloud IaC, and LLM integrations."
+    location: "Bangalore, Karnataka, India",
+    short_bio: "Software Engineer focused on high-performance FinTech systems and applied AI. Skilled in distributed systems, Kafka pipelines, cloud IaC, and LLM integrations."
   },
   education: [
     {
       institution: "Vishwakarma Institute of Information Technology",
       location: "Pune, Maharashtra, India",
       degree: "B. Tech. Artificial Intelligence & Data Science Engineering",
-      dates: "August 2021 – May 2025",
+      dates: "August 2021 - May 2025",
       cgpa: "8.98"
     }
   ],
   work_experience: [
     {
-      title: "Software Developer",
+      title: "Software Development Engineer - I",
+      company: "Jupiter Money",
+      location: "Bangalore, Karnataka, India",
+      dates: "January 2026 - Present",
+      highlights: [
+        "Engineered cloud-agnostic backend services for PPI and Java 25 migration initiatives, enabling seamless configurability across AWS and Oracle environments while improving maintainability and deployment portability.",
+        "Built and stabilized PPI onboarding journeys by resolving terminal-state, retry-loop, and stale-state defects across Onboarding, VKYC, and eKYC workflows, reducing customer complaints by 40% and improving onboarding recovery rates.",
+        "Developed a production-grade WhatsApp bot for drop-off nudging and automated CKYC-failure onboarding recovery, increasing daily successful onboarding by 14% and improving customer lifecycle conversion efficiency."
+      ]
+    },
+    {
+      title: "Graduate Trainee Engineer",
       company: "PayU Payments",
       location: "Pune, Maharashtra, India",
-      dates: "June 2025 - Present",
+      dates: "June 2025 - December 2025",
       highlights: [
         "Designed and implemented a service for generating the Daily Settlement Table, improving settlement accuracy by 35% and reducing redundancy in storage by 40%.",
         "Built an MCP-based communication service to interface with external BBPS systems, processing over 40,000 transactions per hour using Kafka and MongoDB.",
         "Developed an LLM-powered chatbot with RESTful integrations, reducing customer query resolution time by 25% and automating 40% of support tickets.",
+        "Engineered a feedback-driven recovery framework incorporating intent correction, response retries, and fallback routing mechanisms, improving chatbot resolution accuracy by 35%.",
         "Engineered a Recurring report scheduler for triggered system reports, integrated into CI/CD workflows using Jenkins and deployed on AWS, cutting manual intervention by 60%."
       ]
     },
@@ -107,21 +118,23 @@ const resumeData: Resume = {
     },
     {
       name: "Sky-Link",
-      type: "GitHub",
+      type: "Live",
+      live_url: "https://skylink-jild.onrender.com/",
       repo_url: "https://github.com/godseritesh/SkyLink",
-      summary: "Java-based Airline Reservation System implementing OOP principles and in-memory data structures for efficient flight search, seat allocation, and bookings.",
+      summary: "Java Spring Boot-based Airline Reservation System with REST APIs, MySQL persistence, and thread-safe concurrency for flight scheduling, bookings, and cancellations.",
       technical_details: [
-        "Engineered safe seat booking using synchronized access and concurrent queues, eliminating race conditions and preventing double bookings across 100+ parallel transactions.",
-        "Optimized data lookups through HashMap caching, achieving O(1) retrieval time and reducing average booking latency by 80% compared to naive list traversal."
+        "Designed REST APIs using Spring Boot with MySQL for persistent storage of flight, booking, and passenger records.",
+        "Built a thread-safe seat allocation engine using Java Concurrency and synchronization mechanisms, preventing double bookings under 100+ concurrent booking requests.",
+        "Implemented HashMap caching for O(1) data lookups, reducing average booking latency by 80% compared to naive list traversal."
       ]
     }
   ],
   technical_skills: {
-    languages: ["Java", "Python", "SQL", "Shell Scripting", "Node.JS", "Next.JS", "Express.JS", "Pyspark"],
-    tools: ["Git", "REST API", "Flask", "Docker", "Jenkins", "Grafana", "Machine Learning", "DataBricks", "Kafka"],
-    databases: ["MongoDB", "MySQL", "PostgreSQL", "Oracle", "NoSQL"],
-    cloud: ["AWS", "Azure", "Vercel", "Firebase"],
-    concepts: ["Data Structures", "OOP", "Multithreading", "Concurrency", "CI/CD", "ETL", "IaC"]
+    languages: ["Java", "Python", "SQL", "Shell Scripting", "Node.JS", "Next.JS", "Express.JS", "Pyspark", "Kotlin"],
+    tools: ["Git", "REST API", "Flask", "Docker", "Jenkins", "Grafana", "Machine Learning", "DataBricks", "Kafka", "Elasticsearch", "Temporal Workflows"],
+    databases: ["MongoDB", "MySQL", "PostgreSQL", "Oracle", "NoSQL", "ScyllaDB"],
+    cloud: ["AWS", "Azure", "Vercel", "Firebase", "Google Cloud Platform"],
+    concepts: ["Data Structures", "OOP", "Multithreading", "Concurrency", "CI/CD", "ETL", "IaC", "Event-Driven Architecture"]
   },
   certifications: [
     "IR4.0 Foundation by Microsoft & SAP",
@@ -139,7 +152,7 @@ const resumeData: Resume = {
     linkedin: "https://www.linkedin.com/in/godse-ritesh/",
     github: "https://github.com/godseritesh",
     geeksforgeeks: "https://www.geeksforgeeks.org/user/riteshgodse/",
-    leetcode: "https://leetcode.com/u/riteshgodse/",
+    leetcode: "https://leetcode.com/godse-ritesh/",
     resume_drive: "https://drive.google.com/file/d/1O-HVMnwcQcYpDm0SCwtkRNKe-QDcKXSy/view?usp=sharing",
     other_drive_1: "https://drive.google.com/file/d/1EKXE8i0WMtQg9qkuS51K-T9nn1s6fshK/view?usp=sharing",
     mapmyganpati: "https://mapmyganpati.vercel.app/",

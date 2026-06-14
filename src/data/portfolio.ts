@@ -1,38 +1,52 @@
 export const personalInfo = {
   name: 'Ritesh Godse',
-  title: 'Software Developer & FinTech Specialist',
+  title: 'Software Development Engineer',
   tagline: 'High-performance systems, AI-driven solutions, and scalable architectures',
   email: 'work.riteshgodse@gmail.com',
-  bio: 'Software Developer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
+  bio: 'Software Engineer focused on high-performance FinTech systems, distributed architectures, and applied AI. Proven track record building scalable payment processing systems, real-time data pipelines, and LLM-integrated applications with measurable business impact.',
   phone: '+91 8983100889',
-  location: 'Pune, India',
+  location: 'Bangalore, India',
   socials: {
     github: 'https://github.com/godseritesh',
-    linkedin: 'https://linkedin.com/in/riteshgodse',
+    linkedin: 'https://linkedin.com/in/godse-ritesh/',
     gfg: 'https://auth.geeksforgeeks.org/user/riteshgodse',
-    leetcode: 'https://leetcode.com/riteshgodse',
+    leetcode: 'https://leetcode.com/godse-ritesh/',
     email: 'mailto:work.riteshgodse@gmail.com',
   },
-  resumePdfUrl: '/resume.pdf',
+  resumePdfUrl: 'https://drive.google.com/file/d/1O-HVMnwcQcYpDm0SCwtkRNKe-QDcKXSy/view?usp=sharing',
 };
 
 export const experience = [
   {
     id: 1,
+    company: 'Jupiter Money',
+    position: 'Software Development Engineer - I',
+    duration: 'Jan 2026 - Present',
+    description: 'Building cloud-agnostic backend services for PPI and Java 25 migration initiatives, onboarding journeys, and automated recovery systems.',
+    highlights: [
+      'Engineered cloud-agnostic backend services for PPI and Java 25 migration initiatives, enabling seamless configurability across AWS and Oracle environments while improving maintainability and deployment portability.',
+      'Built and stabilized PPI onboarding journeys by resolving terminal-state, retry-loop, and stale-state defects across Onboarding, VKYC, and eKYC workflows, reducing customer complaints by 40% and improving onboarding recovery rates.',
+      'Developed a production-grade WhatsApp bot for drop-off nudging and automated CKYC-failure onboarding recovery, increasing daily successful onboarding by 14% and improving customer lifecycle conversion efficiency.',
+    ],
+    skills: ['Java', 'Spring Boot', 'AWS', 'Oracle', 'Microservices', 'Kubernetes'],
+  },
+  {
+    id: 2,
     company: 'PayU Payments',
     position: 'Graduate Trainee Engineer',
-    duration: 'June 2025 - Present',
-    description: 'Architecting and building high-performance payment processing systems handling millions of transactions daily. Specializing in settlement accuracy, real-time data pipelines, and LLM-powered customer support automation.',
+    duration: 'June 2025 - Dec 2025',
+    description: 'Architected and built high-performance payment processing systems handling millions of transactions daily. Specializing in settlement accuracy, real-time data pipelines, and LLM-powered customer support automation.',
     highlights: [
       'Designed Daily Settlement Table service, improving settlement accuracy by 35% and reducing storage redundancy by 40%',
       'Built MCP-based communication service for external BBPS systems, processing 40,000+ transactions per hour using Kafka and MongoDB',
       'Developed LLM-powered chatbot with RESTful integrations, reducing customer query resolution time by 25% and automating 40% of support tickets',
-      'Engineered recurring report scheduler integrated into CI/CD (Jenkins) and deployed on AWS, cutting manual intervention by 60%',
+      'Engineered feedback-driven recovery framework incorporating intent correction, response retries, and fallback routing, improving chatbot resolution accuracy by 35%',
+      'Built recurring report scheduler integrated into CI/CD (Jenkins) and deployed on AWS, cutting manual intervention by 60%',
     ],
     skills: ['Java', 'Spring Boot', 'Kafka', 'MongoDB', 'AWS', 'Docker', 'LLM Integration', 'CI/CD', 'Jenkins'],
   },
   {
-    id: 2,
+    id: 3,
     company: 'JPMorgan Chase & Co.',
     position: 'Software Developer (Contract)',
     duration: 'January 2025 - June 2025',
@@ -69,6 +83,7 @@ export const skills = [
   { name: 'Python', category: 'Language', proficiency: 90 },
   { name: 'TypeScript', category: 'Language', proficiency: 85 },
   { name: 'JavaScript', category: 'Language', proficiency: 85 },
+  { name: 'Kotlin', category: 'Language', proficiency: 75 },
   
   // Backend Frameworks
   { name: 'Spring Boot', category: 'Backend', proficiency: 95 },
@@ -81,9 +96,13 @@ export const skills = [
   { name: 'PostgreSQL', category: 'Database', proficiency: 90 },
   { name: 'MySQL', category: 'Database', proficiency: 85 },
   { name: 'Redis', category: 'Database', proficiency: 85 },
+  { name: 'ScyllaDB', category: 'Database', proficiency: 75 },
+  { name: 'Elasticsearch', category: 'Database', proficiency: 80 },
   
   // Cloud & DevOps
   { name: 'AWS', category: 'Cloud', proficiency: 90 },
+  { name: 'Azure', category: 'Cloud', proficiency: 85 },
+  { name: 'Google Cloud', category: 'Cloud', proficiency: 80 },
   { name: 'Docker', category: 'DevOps', proficiency: 90 },
   { name: 'Kubernetes', category: 'DevOps', proficiency: 85 },
   { name: 'Terraform', category: 'DevOps', proficiency: 85 },
@@ -91,6 +110,8 @@ export const skills = [
   
   // Message Brokers & Streaming
   { name: 'Kafka', category: 'Streaming', proficiency: 90 },
+  { name: 'Kafka Sink/Source Connectors', category: 'Streaming', proficiency: 80 },
+  { name: 'Temporal Workflows', category: 'Streaming', proficiency: 75 },
   { name: 'RabbitMQ', category: 'Streaming', proficiency: 80 },
   
   // AI/ML
@@ -144,19 +165,18 @@ export const projects = [
   {
     id: 2,
     title: 'Sky-Link',
-    tagline: 'Airline reservation system handling 100+ parallel transactions safely',
-    description: `Sky-Link is a Java-based airline reservation system implementing OOP principles, concurrent programming, and in-memory data structures for efficient flight search, seat allocation, and booking management. Designed to handle 100+ parallel transactions safely without race conditions or double bookings.`,
-    technologies: ['Java', 'Concurrency', 'Data Structures', 'HashMap', 'Thread-safe Collections'],
+    tagline: 'Airline reservation system with Spring Boot and MySQL',
+    description: `Sky-Link is a Java Spring Boot-based airline reservation system implementing REST APIs, MySQL persistence, and thread-safe concurrency for flight scheduling, passenger management, ticket booking, and cancellation workflows.`,
+    technologies: ['Java', 'Spring Boot', 'MySQL', 'Multithreading', 'REST APIs', 'JUnit'],
     category: 'Backend',
-    tags: ['concurrency', 'data-structures', 'performance'],
-    liveUrl: '',
+    tags: ['concurrency', 'spring-boot', 'performance'],
+    liveUrl: 'https://skylink-jild.onrender.com/',
     repoUrl: 'https://github.com/godseritesh/SkyLink',
     imageUrl: '/projects/skylink.png',
     highlights: [
-      'Designed safe seat booking using synchronized access and concurrent queues, eliminating race conditions',
-      'Prevented double bookings across 100+ parallel transactions using thread-safe data structures',
-      'Optimized data lookups through HashMap caching, achieving O(1) retrieval time',
-      'Reduced average booking latency by 80% compared to naïve list traversal',
+      'Designed REST APIs using Spring Boot with MySQL for persistent storage of flight, booking, and passenger records',
+      'Built thread-safe seat allocation engine using Java Concurrency and synchronization, preventing double bookings under 100+ concurrent booking requests',
+      'Optimized data lookups through HashMap caching, achieving O(1) retrieval time and reducing average booking latency by 80%',
     ],
     metrics: {
       parallelTransactions: '100+',
@@ -164,10 +184,10 @@ export const projects = [
       lookupComplexity: 'O(1)',
     },
     architecture: {
-      language: 'Java with OOP principles (Encapsulation, Inheritance, Polymorphism)',
-      dataStructures: 'HashMap for O(1) flight/seat lookups, ConcurrentHashMap for thread safety',
+      language: 'Java 17 with Spring Boot framework',
+      database: 'MySQL with JPA/Hibernate for ORM',
       concurrency: 'Synchronized blocks and concurrent queues for race-condition prevention',
-      design: 'Factory pattern for object creation, Strategy pattern for booking logic',
+      design: 'RESTful API design patterns, layered architecture',
     },
   },
   {
@@ -223,6 +243,8 @@ export const projects = [
 ];
 
 export const achievements = [
+  'Reduced customer complaints by 40% and improved onboarding recovery rates by resolving terminal-state and retry-loop defects across PPI onboarding workflows',
+  'Increased daily successful onboarding by 14% through a production-grade WhatsApp bot for drop-off nudging and CKYC-failure recovery',
   'Reduced customer query resolution time by 25% and automated 40% of support tickets with LLM-powered chatbot',
   'Cut manual intervention by 60% via recurring report scheduler integrated with Jenkins and AWS',
   'Achieved 2× faster throughput for Hadoop-to-Delta Lake migration and established POC framework for production scaling',
@@ -230,9 +252,7 @@ export const achievements = [
   'Reduced integration defects by 30% via contract-based API testing with PactFlow',
   'Managed 5,000+ concurrent users with 99.9% uptime during peak festival hours',
   'Achieved 100% cost savings vs. Google Maps API through Firebase and Vercel deployment',
-  'Reduced booking latency by 80% through HashMap caching and O(1) data structure optimization',
-  'Prevented double bookings across 100+ parallel transactions with thread-safe concurrent programming',
-  'Published research paper at IEEE Conference on Next Word Prediction System using NLP',
+  'Published research paper at IEEE Conference, NIT Rourkela on Next Word Prediction System using NLP',
   'Qualified for Google Hash Code 2022 - team-based coding challenge',
   'Vice President, NSS VIIT: Built web app in 48 hours engaging 3,500+ users, increased blood donation count by 25%',
 ];
