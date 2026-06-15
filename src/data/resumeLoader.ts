@@ -106,6 +106,17 @@ const resumeData: Resume = {
   ],
   projects: [
     {
+      name: "NSS Platform",
+      type: "Live",
+      live_url: "https://nss-platform.onrender.com/",
+      summary: "Event polling and awareness web app for NSS VIIT, built in 48 hours using open-source tech, engaging 3,500+ users and increasing blood donation count by 25%.",
+      technical_details: [
+        "Built a web application using open-source technologies for campus-wide event polling and awareness campaigns.",
+        "Engaged 3,500+ students and increased blood donation participation by 25% through targeted outreach.",
+        "Served as Vice President of NSS VIIT (2023–24), leading the technical initiative for the organization."
+      ]
+    },
+    {
       name: "Map My Ganapati",
       type: "Live",
       live_url: "https://mapmyganpati.vercel.app/",
