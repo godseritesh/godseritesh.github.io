@@ -17,35 +17,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   projectUrl,
   fallbackUrl,
 }) => {
-  const [state, setState] = useState<'loading' | 'ready' | 'blocked'>('loading');
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [state, setState] = useState<'loading' | 'ready' | 'timedout'>('loading');
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleIframeLoad = useCallback(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
-
-    try {
-      const doc = iframe.contentDocument;
-      // contentDocument is null when browser blocks the iframe (X-Frame-Options)
-      if (doc === null) {
-        setState('blocked');
-      } else {
-        setState('ready');
-      }
-    } catch {
-      // SecurityError: cross-origin page loaded successfully (can't access document)
-      setState('ready');
-    }
+    setState('ready');
+    clearTimeout(timerRef.current);
   }, []);
 
   useEffect(() => {
     if (!isOpen) return;
     setState('loading');
-    // Safety timeout: if iframe never fires onLoad after 20s, treat as blocked
     timerRef.current = setTimeout(() => {
-      setState((s) => (s === 'loading' ? 'blocked' : s));
-    }, 20000);
+      setState((s) => (s === 'loading' ? 'timedout' : s));
+    }, 15000);
     return () => clearTimeout(timerRef.current);
   }, [isOpen, projectUrl]);
 
@@ -106,7 +91,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 </div>
               </div>
 
-              <div className="flex-1 relative overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+              <div className="flex-1 relative overflow-hidden bg-gray-100 dark:bg-gray-800">
                 {state === 'loading' && (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-800 z-10 gap-3">
                     <Loader size={36} className="text-blue-500 animate-spin" />
@@ -114,30 +99,31 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   </div>
                 )}
 
-                {state === 'blocked' && (
-                  <div className="text-center px-6">
-                    <ShieldAlert size={48} className="mx-auto mb-4 text-amber-500" />
-                    <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Preview unavailable</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 max-w-sm">
-                      This site blocks embedding. You can open it in a new tab instead.
-                    </p>
-                    <a
-                      href={fallbackUrl || projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Open in New Tab
-                      <ExternalLink size={16} />
-                    </a>
+                {state === 'timedout' && (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center px-6">
+                      <ShieldAlert size={48} className="mx-auto mb-4 text-amber-500" />
+                      <p className="text-gray-700 dark:text-gray-300 mb-2 font-semibold">Preview unavailable</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 max-w-sm">
+                        This site blocks embedding. You can open it in a new tab instead.
+                      </p>
+                      <a
+                        href={fallbackUrl || projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        Open in New Tab
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
                   </div>
                 )}
 
                 <iframe
-                  ref={iframeRef}
                   src={projectUrl}
                   title={projectName}
-                  className={`w-full h-full border-0 ${state !== 'ready' ? 'absolute opacity-0' : ''}`}
+                  className={`w-full h-full border-0 ${state !== 'ready' ? 'absolute inset-0 opacity-0' : ''}`}
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                   onLoad={handleIframeLoad}
                 />
