@@ -18,16 +18,23 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   fallbackUrl,
 }) => {
   const [state, setState] = useState<'loading' | 'ready' | 'blocked'>('loading');
-  const loadTimeRef = useRef<number>(0);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleIframeLoad = useCallback(() => {
-    const elapsed = Date.now() - loadTimeRef.current;
-    // If onLoad fires in under 800ms, it's likely a browser error page (blocked by X-Frame-Options)
-    // Real content takes longer to load
-    if (elapsed < 800) {
-      setState('blocked');
-    } else {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+
+    try {
+      const doc = iframe.contentDocument;
+      // contentDocument is null when browser blocks the iframe (X-Frame-Options)
+      if (doc === null) {
+        setState('blocked');
+      } else {
+        setState('ready');
+      }
+    } catch {
+      // SecurityError: cross-origin page loaded successfully (can't access document)
       setState('ready');
     }
   }, []);
@@ -35,11 +42,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   useEffect(() => {
     if (!isOpen) return;
     setState('loading');
-    loadTimeRef.current = Date.now();
-    // Safety timeout: if iframe never fires onLoad after 10s, treat as blocked
+    // Safety timeout: if iframe never fires onLoad after 20s, treat as blocked
     timerRef.current = setTimeout(() => {
       setState((s) => (s === 'loading' ? 'blocked' : s));
-    }, 10000);
+    }, 20000);
     return () => clearTimeout(timerRef.current);
   }, [isOpen, projectUrl]);
 
@@ -128,6 +134,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 )}
 
                 <iframe
+                  ref={iframeRef}
                   src={projectUrl}
                   title={projectName}
                   className={`w-full h-full border-0 ${state !== 'ready' ? 'absolute opacity-0' : ''}`}
