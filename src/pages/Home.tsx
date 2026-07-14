@@ -104,7 +104,7 @@ const Home = () => {
                   <ArrowRight size={20} />
                 </motion.button>
               </Link>
-              <a href="https://drive.usercontent.google.com/uc?id=1glkcngn2JW_ka41g23BzNA7WuG8hZxqD&export=download" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.usercontent.google.com/uc?id=1seu070uqZP-j3XdBySVrIkvALw2f6PGc&export=download" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}
                   whileTap={{ scale: 0.98 }}

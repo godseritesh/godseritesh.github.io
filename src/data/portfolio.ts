@@ -13,7 +13,7 @@ export const personalInfo = {
     leetcode: 'https://leetcode.com/godse-ritesh/',
     email: 'mailto:work.riteshgodse@gmail.com',
   },
-  resumePdfUrl: 'https://drive.google.com/file/d/1O-HVMnwcQcYpDm0SCwtkRNKe-QDcKXSy/view?usp=sharing',
+  resumePdfUrl: 'https://drive.google.com/file/d/1seu070uqZP-j3XdBySVrIkvALw2f6PGc/view?usp=sharing',
 };
 
 export const experience = [
